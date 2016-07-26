@@ -12,8 +12,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
     @IBOutlet weak var tableView: UITableView!
     
+    var colleges : [College] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        colleges.append(College(name: "Harvard", location: "Cambridge", enrollment: 21000, image: UIImage(named: "Harvard")!))
+        colleges.append(College(name: "Northwestern", location: "Evanston", enrollment: 20336, image: UIImage(named: "Northwestern")!))
+        colleges.append(College(name: "Tsinghua", location: "Beijing", enrollment: 45237, image: UIImage(named: "Tsinghua")!))
     }
 }
