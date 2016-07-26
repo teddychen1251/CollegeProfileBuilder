@@ -11,6 +11,7 @@ import UIKit
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var editButton: UIBarButtonItem!
     
     var colleges : [College] = []
     
@@ -19,6 +20,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         colleges.append(College(name: "Harvard", location: "Cambridge", enrollment: 21000, image: UIImage(named: "Harvard")!))
         colleges.append(College(name: "Northwestern", location: "Evanston", enrollment: 20336, image: UIImage(named: "Northwestern")!))
         colleges.append(College(name: "Tsinghua", location: "Beijing", enrollment: 45237, image: UIImage(named: "Tsinghua")!))
+        editButton.tag = 0
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -35,6 +37,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             tableView.reloadData()
         }
     }
+    func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return true
+    }
+    func tableView(tableView: UITableView, moveRowAtIndexPath sourceIndexPath: NSIndexPath, toIndexPath destinationIndexPath: NSIndexPath) {
+        let college = colleges[sourceIndexPath.row]
+        colleges.removeAtIndex(sourceIndexPath.row)
+        colleges.insert(college, atIndex: destinationIndexPath.row)
+    }
     
     @IBAction func onTappedPlusButton(sender: UIBarButtonItem) {
         let alert = UIAlertController(title: "Add College", message: nil, preferredStyle: .Alert)
@@ -50,6 +60,15 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
         alert.addAction(cancelAction)
         self.presentViewController(alert, animated: true, completion: nil)
+    }
+    @IBAction func onTappedEditButton(sender: UIBarButtonItem) {
+        if sender.tag == 0 {
+            tableView.editing = true
+            sender.tag = 1
+        } else {
+            tableView.editing = false
+            sender.tag = 0
+        }
     }
 }
 
