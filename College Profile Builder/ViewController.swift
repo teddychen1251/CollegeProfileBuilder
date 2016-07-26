@@ -20,4 +20,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         colleges.append(College(name: "Northwestern", location: "Evanston", enrollment: 20336, image: UIImage(named: "Northwestern")!))
         colleges.append(College(name: "Tsinghua", location: "Beijing", enrollment: 45237, image: UIImage(named: "Tsinghua")!))
     }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return colleges.count
+    }
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("MyCell", forIndexPath: indexPath)
+        cell.textLabel!.text = colleges[indexPath.row].name
+        return cell
+    }
 }
