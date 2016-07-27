@@ -106,19 +106,24 @@
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FP4-1T-vKQ">
-                                <rect key="frame" x="283" y="384" width="34" height="30"/>
+                                <rect key="frame" x="283" y="423" width="34" height="30"/>
                                 <state key="normal" title="Save"/>
                                 <connections>
                                     <action selector="onTappedSaveButton:" destination="Bah-ff-a0U" eventType="touchUpInside" id="GJv-u0-Jjx"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vNe-wM-1k8">
-                                <rect key="frame" x="175" y="232" width="250" height="150"/>
+                                <rect key="frame" x="175" y="230" width="250" height="150"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="fFg-4z-fxS"/>
                                     <constraint firstAttribute="width" constant="250" id="fgw-dt-myi"/>
                                 </constraints>
                             </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Website" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YwJ-Oz-bWB">
+                                <rect key="frame" x="225" y="393" width="150" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -134,6 +139,7 @@
                         <outlet property="enrollmentTextField" destination="wUW-xP-JTW" id="Xff-hw-v3g"/>
                         <outlet property="imageView" destination="vNe-wM-1k8" id="2It-e4-eNn"/>
                         <outlet property="locationTextField" destination="sNq-IH-OUa" id="vy7-i4-lRD"/>
+                        <outlet property="urlTextField" destination="YwJ-Oz-bWB" id="9hw-Do-kKL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TTR-1I-XtA" userLabel="First Responder" sceneMemberID="firstResponder"/>
