@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SafariServices
 
 class DetailViewController: UIViewController {
 
@@ -24,9 +25,14 @@ class DetailViewController: UIViewController {
         locationTextField.text = college.location
         enrollmentTextField.text = String(college.enrollment)
         imageView.image = college.image
-        urlTextField.text = String(college.url)
+        urlTextField.text = String(college.url!)
     }
     
+    @IBAction func onTappedGoButton(sender: UIButton) {
+        let url = NSURL(string: urlTextField.text!)!
+        let svc = SFSafariViewController(URL: url)
+        presentViewController(svc, animated: true, completion: nil)
+    }
     @IBAction func onTappedSaveButton(sender: UIButton) {
         college.name = collegeTextField.text!
         college.location = locationTextField.text!

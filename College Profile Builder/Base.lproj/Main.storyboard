@@ -119,14 +119,26 @@
                                     <constraint firstAttribute="width" constant="250" id="fgw-dt-myi"/>
                                 </constraints>
                             </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Website" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YwJ-Oz-bWB">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Website" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YwJ-Oz-bWB">
                                 <rect key="frame" x="225" y="393" width="150" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="pOZ-1B-CcZ"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6yl-18-Dyj">
+                                <rect key="frame" x="383" y="393" width="30" height="30"/>
+                                <state key="normal" title="Go"/>
+                                <connections>
+                                    <action selector="onTappedGoButton:" destination="Bah-ff-a0U" eventType="touchUpInside" id="2tS-8t-FVV"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="YwJ-Oz-bWB" firstAttribute="centerX" secondItem="kfi-Nw-iNZ" secondAttribute="centerX" id="50J-7p-0YI"/>
+                            <constraint firstItem="6yl-18-Dyj" firstAttribute="centerX" secondItem="kfi-Nw-iNZ" secondAttribute="centerX" constant="98" id="SuW-2f-edl"/>
                             <constraint firstItem="vNe-wM-1k8" firstAttribute="centerX" secondItem="kfi-Nw-iNZ" secondAttribute="centerX" id="fyS-w7-iWy"/>
                             <constraint firstItem="FP4-1T-vKQ" firstAttribute="centerX" secondItem="kfi-Nw-iNZ" secondAttribute="centerX" id="mr0-5Q-U3r"/>
                             <constraint firstItem="wUW-xP-JTW" firstAttribute="centerX" secondItem="kfi-Nw-iNZ" secondAttribute="centerX" id="n7B-Jb-yvl"/>
