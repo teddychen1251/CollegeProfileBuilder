@@ -9,7 +9,7 @@
 import UIKit
 import SafariServices
 
-class DetailViewController: UIViewController {
+class DetailViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     @IBOutlet weak var collegeTextField: UITextField!
     @IBOutlet weak var locationTextField: UITextField!
@@ -18,9 +18,11 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var urlTextField: UITextField!
     
     var college: College!
+    var imagePicker = UIImagePickerController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        imagePicker.delegate = self
         collegeTextField.text = college.name
         locationTextField.text = college.location
         enrollmentTextField.text = String(college.enrollment)
