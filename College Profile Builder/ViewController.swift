@@ -17,9 +17,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        colleges.append(College(name: "Harvard", location: "Cambridge", enrollment: 21000, image: UIImage(named: "Harvard")!))
-        colleges.append(College(name: "Northwestern", location: "Evanston", enrollment: 20336, image: UIImage(named: "Northwestern")!))
-        colleges.append(College(name: "Tsinghua", location: "Beijing", enrollment: 45237, image: UIImage(named: "Tsinghua")!))
+        colleges.append(College(name: "Harvard", location: "Cambridge, MA", enrollment: 21000, image: UIImage(named: "Harvard")!))
+        colleges.append(College(name: "Northwestern", location: "Evanston, IL", enrollment: 20336, image: UIImage(named: "Northwestern")!))
+        colleges.append(College(name: "Tsinghua", location: "Beijing, China", enrollment: 45237, image: UIImage(named: "Tsinghua")!))
         editButton.tag = 0
     }
     
