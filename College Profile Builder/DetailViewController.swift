@@ -30,6 +30,8 @@ class DetailViewController: UIViewController, UIImagePickerControllerDelegate, U
         urlTextField.text = String(college.url!)
     }
     
+    @IBAction func onTappedImageView(sender: UITapGestureRecognizer) {
+    }
     @IBAction func onTappedGoButton(sender: UIButton) {
         let url = NSURL(string: urlTextField.text!)!
         let svc = SFSafariViewController(URL: url)
