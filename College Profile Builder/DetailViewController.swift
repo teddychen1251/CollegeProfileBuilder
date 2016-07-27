@@ -30,6 +30,13 @@ class DetailViewController: UIViewController, UIImagePickerControllerDelegate, U
         urlTextField.text = String(college.url!)
     }
     
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+        imagePicker.dismissViewControllerAnimated(true) { 
+            let selectedImage = info[UIImagePickerControllerOriginalImage] as! UIImage
+            self.imageView.image = selectedImage
+        }
+    }
+    
     @IBAction func onTappedImageView(sender: UITapGestureRecognizer) {
         let actionController = UIAlertController(title: "Select image source", message: "test", preferredStyle: .ActionSheet)
         
