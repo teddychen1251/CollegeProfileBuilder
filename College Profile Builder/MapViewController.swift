@@ -37,14 +37,15 @@ class MapViewController: UIViewController, UITextFieldDelegate {
         geocoder.geocodeAddressString(locationTextField.text!) { (placemarks, error) in
             if error != nil {
                 print(error)
+            } else if placemarks!.count == 1 {
+                self.displayMapAndChangeTextField(placemarks![0].location!.coordinate, pinTitle: placemarks![0].name!)
             } else {
                 let actionController = UIAlertController(title: "Possible Locations", message: nil, preferredStyle: .ActionSheet)
                 for index in 0...9 {
-                    if let placemark = placemarks?[index] {
+                    if index < placemarks!.count {
+                        let placemark = placemarks![index]
                         let possibleLocationAction = UIAlertAction(title: placemark.name, style: .Default, handler: { (action) in
-                            self.dismissViewControllerAnimated(true, completion: { 
                                 self.displayMapAndChangeTextField(placemark.location!.coordinate, pinTitle: placemark.name!)
-                            })
                         })
                         actionController.addAction(possibleLocationAction)
                     }
