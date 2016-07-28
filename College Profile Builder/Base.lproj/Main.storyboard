@@ -6,7 +6,7 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--My Colleges-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController automaticallyAdjustsScrollViewInsets="NO" id="BYZ-38-t0r" customClass="ViewController" customModule="College_Profile_Builder" customModuleProvider="target" sceneMemberID="viewController">
@@ -57,7 +57,7 @@
                             <constraint firstItem="k7Z-4C-ayP" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="uxB-JT-VeV"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="xwS-lD-eHR">
+                    <navigationItem key="navigationItem" title="My Colleges" id="xwS-lD-eHR">
                         <barButtonItem key="leftBarButtonItem" systemItem="edit" id="bTS-EY-cfU">
                             <connections>
                                 <action selector="onTappedEditButton:" destination="BYZ-38-t0r" id="l3p-2x-la8"/>
@@ -78,7 +78,7 @@
             </objects>
             <point key="canvasLocation" x="1021" y="-379"/>
         </scene>
-        <!--Detail View Controller-->
+        <!--College Profile-->
         <scene sceneID="Qky-C9-j5C">
             <objects>
                 <viewController id="Bah-ff-a0U" customClass="DetailViewController" customModule="College_Profile_Builder" customModuleProvider="target" sceneMemberID="viewController">
@@ -90,15 +90,55 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="College" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="icC-bb-dyO">
-                                <rect key="frame" x="225" y="111" width="150" height="30"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="College" translatesAutoresizingMaskIntoConstraints="NO" id="PfV-UK-gjg">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                            </imageView>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vNe-wM-1k8">
+                                <rect key="frame" x="175" y="244" width="250" height="150"/>
+                                <gestureRecognizers/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="C8X-uW-iMw"/>
-                                    <constraint firstAttribute="width" constant="150" id="ohz-qh-iTk"/>
+                                    <constraint firstAttribute="height" constant="150" id="fFg-4z-fxS"/>
+                                    <constraint firstAttribute="width" constant="250" id="fgw-dt-myi"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="YUu-iZ-EJw" appends="YES" id="LKL-yJ-omw"/>
+                                </connections>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap image to change" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5mL-oH-IpJ">
+                                <rect key="frame" x="237" y="220" width="126" height="21"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="Oqg-Yf-aBQ"/>
+                                    <constraint firstAttribute="width" constant="126" id="z8H-sl-jOt"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6yl-18-Dyj">
+                                <rect key="frame" x="383" y="407" width="30" height="30"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Go"/>
+                                <connections>
+                                    <action selector="onTappedGoButton:" destination="Bah-ff-a0U" eventType="touchUpInside" id="2tS-8t-FVV"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Website" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YwJ-Oz-bWB">
+                                <rect key="frame" x="225" y="407" width="150" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="pOZ-1B-CcZ"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FP4-1T-vKQ">
+                                <rect key="frame" x="283" y="437" width="34" height="30"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="onTappedSaveButton:" destination="Bah-ff-a0U" eventType="touchUpInside" id="GJv-u0-Jjx"/>
+                                </connections>
+                            </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Location" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sNq-IH-OUa">
                                 <rect key="frame" x="225" y="149" width="150" height="30"/>
                                 <constraints>
@@ -117,49 +157,15 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FP4-1T-vKQ">
-                                <rect key="frame" x="283" y="437" width="34" height="30"/>
-                                <state key="normal" title="Save"/>
-                                <connections>
-                                    <action selector="onTappedSaveButton:" destination="Bah-ff-a0U" eventType="touchUpInside" id="GJv-u0-Jjx"/>
-                                </connections>
-                            </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Website" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YwJ-Oz-bWB">
-                                <rect key="frame" x="225" y="407" width="150" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="College" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="icC-bb-dyO">
+                                <rect key="frame" x="225" y="111" width="150" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="150" id="pOZ-1B-CcZ"/>
+                                    <constraint firstAttribute="height" constant="30" id="C8X-uW-iMw"/>
+                                    <constraint firstAttribute="width" constant="150" id="ohz-qh-iTk"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6yl-18-Dyj">
-                                <rect key="frame" x="383" y="407" width="30" height="30"/>
-                                <state key="normal" title="Go"/>
-                                <connections>
-                                    <action selector="onTappedGoButton:" destination="Bah-ff-a0U" eventType="touchUpInside" id="2tS-8t-FVV"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap image to change" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5mL-oH-IpJ">
-                                <rect key="frame" x="237" y="220" width="126" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="Oqg-Yf-aBQ"/>
-                                    <constraint firstAttribute="width" constant="126" id="z8H-sl-jOt"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vNe-wM-1k8">
-                                <rect key="frame" x="175" y="244" width="250" height="150"/>
-                                <gestureRecognizers/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="150" id="fFg-4z-fxS"/>
-                                    <constraint firstAttribute="width" constant="250" id="fgw-dt-myi"/>
-                                </constraints>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="YUu-iZ-EJw" appends="YES" id="LKL-yJ-omw"/>
-                                </connections>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
@@ -168,11 +174,15 @@
                             <constraint firstItem="YwJ-Oz-bWB" firstAttribute="centerX" secondItem="kfi-Nw-iNZ" secondAttribute="centerX" id="50J-7p-0YI"/>
                             <constraint firstItem="vNe-wM-1k8" firstAttribute="centerY" secondItem="kfi-Nw-iNZ" secondAttribute="centerY" constant="19" id="62M-Zi-Cf7"/>
                             <constraint firstItem="wUW-xP-JTW" firstAttribute="centerY" secondItem="kfi-Nw-iNZ" secondAttribute="centerY" constant="-98" id="Br7-Xr-Uqa"/>
+                            <constraint firstItem="lhB-E9-ACe" firstAttribute="top" secondItem="PfV-UK-gjg" secondAttribute="bottom" id="GwK-f8-3p9"/>
                             <constraint firstItem="6yl-18-Dyj" firstAttribute="centerY" secondItem="kfi-Nw-iNZ" secondAttribute="centerY" constant="122" id="NSi-xX-xuw"/>
                             <constraint firstItem="6yl-18-Dyj" firstAttribute="centerX" secondItem="kfi-Nw-iNZ" secondAttribute="centerX" constant="98" id="SuW-2f-edl"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="PfV-UK-gjg" secondAttribute="trailing" constant="-20" id="URX-xN-Kel"/>
+                            <constraint firstItem="PfV-UK-gjg" firstAttribute="leading" secondItem="kfi-Nw-iNZ" secondAttribute="leadingMargin" constant="-20" id="XBw-0J-ORs"/>
                             <constraint firstItem="5mL-oH-IpJ" firstAttribute="centerY" secondItem="kfi-Nw-iNZ" secondAttribute="centerY" constant="-69.5" id="XSX-fp-tAE"/>
                             <constraint firstItem="YwJ-Oz-bWB" firstAttribute="centerY" secondItem="kfi-Nw-iNZ" secondAttribute="centerY" constant="122" id="aqH-KA-7HX"/>
                             <constraint firstItem="5mL-oH-IpJ" firstAttribute="centerX" secondItem="kfi-Nw-iNZ" secondAttribute="centerX" id="fmc-p5-xdD"/>
+                            <constraint firstItem="PfV-UK-gjg" firstAttribute="top" secondItem="cNp-YI-KXD" secondAttribute="bottom" id="ibM-h4-1mf"/>
                             <constraint firstItem="icC-bb-dyO" firstAttribute="centerY" secondItem="kfi-Nw-iNZ" secondAttribute="centerY" constant="-174" id="luo-RT-DFa"/>
                             <constraint firstItem="FP4-1T-vKQ" firstAttribute="centerX" secondItem="kfi-Nw-iNZ" secondAttribute="centerX" id="mr0-5Q-U3r"/>
                             <constraint firstItem="wUW-xP-JTW" firstAttribute="centerX" secondItem="kfi-Nw-iNZ" secondAttribute="centerX" id="n7B-Jb-yvl"/>
@@ -182,7 +192,7 @@
                             <constraint firstItem="FP4-1T-vKQ" firstAttribute="centerY" secondItem="kfi-Nw-iNZ" secondAttribute="centerY" constant="152" id="sej-Vh-t24"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="2Yh-iU-f41">
+                    <navigationItem key="navigationItem" title="College Profile" id="2Yh-iU-f41">
                         <barButtonItem key="rightBarButtonItem" title="Map" id="PVJ-YF-tUr">
                             <connections>
                                 <segue destination="RxP-t1-DaF" kind="show" id="Kjx-TZ-UK2"/>
@@ -206,7 +216,7 @@
             </objects>
             <point key="canvasLocation" x="1805" y="-379"/>
         </scene>
-        <!--Map View Controller-->
+        <!--College Location-->
         <scene sceneID="HSm-TP-jT8">
             <objects>
                 <viewController id="RxP-t1-DaF" customClass="MapViewController" customModule="College_Profile_Builder" customModuleProvider="target" sceneMemberID="viewController">
@@ -243,7 +253,7 @@
                             <constraint firstItem="3ue-Mg-Xcf" firstAttribute="leading" secondItem="FFF-cr-uh2" secondAttribute="leadingMargin" constant="-20" id="u8e-RV-NSA"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="2Zg-9X-tSA">
+                    <navigationItem key="navigationItem" title="College Location" id="2Zg-9X-tSA">
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="gBe-5L-vDY">
                             <connections>
                                 <action selector="onTappedSaveButton:" destination="RxP-t1-DaF" id="kPn-hm-KeW"/>
@@ -278,4 +288,7 @@
             <point key="canvasLocation" x="332" y="-379"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="College" width="1184" height="791"/>
+    </resources>
 </document>
