@@ -15,7 +15,7 @@ class College: NSObject {
     var enrollment = 0
     var image = UIImage(named: "Default")
     var url = NSURL(string: "https://bigfuture.collegeboard.org/college-search")
-    var locationCoord: CLLocationCoordinate2D!
+    var locationCoord = CLLocationCoordinate2DMake(0.0, 0.0)
     
     convenience init(name: String, location: String, enrollment: Int, image: UIImage, url: NSURL, locationCoord: CLLocationCoordinate2D) {
         self.init()

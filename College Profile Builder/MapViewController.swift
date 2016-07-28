@@ -18,23 +18,42 @@ class MapViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let span = MKCoordinateSpanMake(0.01, 0.01)
-        let region = MKCoordinateRegionMake(college.locationCoord, span)
-        let pin = MKPointAnnotation()
-        pin.coordinate = college.locationCoord
-        pin.title = college.name
-        mapView.addAnnotation(pin)
-        mapView.setRegion(region, animated: true)
+        displayMapAndChangeTextField(college.locationCoord, pinTitle: college.name)
     }
     
-//    func textFieldShouldReturn(textField: UITextField) -> Bool {
-//        let geocoder = CLGeocoder()
-//        
-//        
-//        
-//        
-//        
-//        
-//        return true
-//    }
+    func displayMapAndChangeTextField(center: CLLocationCoordinate2D, pinTitle: String) {
+        let span = MKCoordinateSpanMake(0.01, 0.01)
+        let region = MKCoordinateRegionMake(center, span)
+        let pin = MKPointAnnotation()
+        pin.coordinate = center
+        pin.title = pinTitle
+        mapView.addAnnotation(pin)
+        mapView.setRegion(region, animated: true)
+        locationTextField.text = pinTitle
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        let geocoder = CLGeocoder()
+        geocoder.geocodeAddressString(locationTextField.text!) { (placemarks, error) in
+            if error != nil {
+                print(error)
+            } else {
+                let actionController = UIAlertController(title: "Possible Locations", message: nil, preferredStyle: .ActionSheet)
+                for index in 0...9 {
+                    if let placemark = placemarks?[index] {
+                        let possibleLocationAction = UIAlertAction(title: placemark.name, style: .Default, handler: { (action) in
+                            self.dismissViewControllerAnimated(true, completion: { 
+                                self.displayMapAndChangeTextField(placemark.location!.coordinate, pinTitle: placemark.name!)
+                            })
+                        })
+                        actionController.addAction(possibleLocationAction)
+                    }
+                }
+                let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
+                actionController.addAction(cancelAction)
+                self.presentViewController(actionController, animated: true, completion: nil)
+            }
+        }
+        return true
+    }
 }
