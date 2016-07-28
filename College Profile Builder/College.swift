@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MapKit
 
 class College: NSObject {
     var name = ""
@@ -14,14 +15,16 @@ class College: NSObject {
     var enrollment = 0
     var image = UIImage(named: "Default")
     var url = NSURL(string: "https://bigfuture.collegeboard.org/college-search")
+    var locationCoord: CLLocationCoordinate2D!
     
-    convenience init(name: String, location: String, enrollment: Int, image: UIImage, url: NSURL) {
+    convenience init(name: String, location: String, enrollment: Int, image: UIImage, url: NSURL, locationCoord: CLLocationCoordinate2D) {
         self.init()
         self.name = name
         self.location = location
         self.enrollment = enrollment
         self.image = image
         self.url = url
+        self.locationCoord = locationCoord
     }
     
     convenience init(name: String) {
