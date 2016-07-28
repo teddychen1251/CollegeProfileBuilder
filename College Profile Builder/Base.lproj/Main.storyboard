@@ -243,6 +243,13 @@
                             <constraint firstItem="3ue-Mg-Xcf" firstAttribute="leading" secondItem="FFF-cr-uh2" secondAttribute="leadingMargin" constant="-20" id="u8e-RV-NSA"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="2Zg-9X-tSA">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="gBe-5L-vDY">
+                            <connections>
+                                <action selector="onTappedSaveButton:" destination="RxP-t1-DaF" id="kPn-hm-KeW"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="locationTextField" destination="a3x-uR-sEY" id="MCN-As-iir"/>
                         <outlet property="mapView" destination="3ue-Mg-Xcf" id="9gW-AU-KRN"/>

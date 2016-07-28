@@ -57,4 +57,8 @@ class MapViewController: UIViewController, UITextFieldDelegate {
         }
         return true
     }
+    
+    @IBAction func onTappedSaveButton(sender: UIBarButtonItem) {
+        college.locationCoord = mapView.centerCoordinate
+    }
 }
