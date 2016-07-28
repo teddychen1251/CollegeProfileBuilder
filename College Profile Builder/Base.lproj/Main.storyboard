@@ -182,10 +182,10 @@
             </objects>
             <point key="canvasLocation" x="1805" y="-379"/>
         </scene>
-        <!--View Controller-->
+        <!--Map View Controller-->
         <scene sceneID="HSm-TP-jT8">
             <objects>
-                <viewController id="RxP-t1-DaF" sceneMemberID="viewController">
+                <viewController id="RxP-t1-DaF" customClass="MapViewController" customModule="College_Profile_Builder" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="RXD-Sa-rYs"/>
                         <viewControllerLayoutGuide type="bottom" id="mb4-ss-KmX"/>
@@ -194,12 +194,32 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="3ue-Mg-Xcf">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="3ue-Mg-Xcf">
                                 <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                             </mapView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="a3x-uR-sEY">
+                                <rect key="frame" x="200" y="72" width="200" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="RxP-t1-DaF" id="EMU-2x-GFc"/>
+                                </connections>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="mb4-ss-KmX" firstAttribute="top" secondItem="3ue-Mg-Xcf" secondAttribute="bottom" id="L0A-ow-NiI"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="3ue-Mg-Xcf" secondAttribute="trailing" constant="-20" id="Npi-Cr-72Z"/>
+                            <constraint firstItem="a3x-uR-sEY" firstAttribute="centerY" secondItem="FFF-cr-uh2" secondAttribute="centerY" constant="-213" id="QPC-0o-Qpp"/>
+                            <constraint firstItem="3ue-Mg-Xcf" firstAttribute="top" secondItem="RXD-Sa-rYs" secondAttribute="bottom" id="qcL-18-TVC"/>
+                            <constraint firstItem="a3x-uR-sEY" firstAttribute="centerX" secondItem="FFF-cr-uh2" secondAttribute="centerX" id="tOV-mH-30K"/>
+                            <constraint firstItem="3ue-Mg-Xcf" firstAttribute="leading" secondItem="FFF-cr-uh2" secondAttribute="leadingMargin" constant="-20" id="u8e-RV-NSA"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="locationTextField" destination="a3x-uR-sEY" id="MCN-As-iir"/>
+                        <outlet property="mapView" destination="3ue-Mg-Xcf" id="9gW-AU-KRN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S6A-fW-Cxq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

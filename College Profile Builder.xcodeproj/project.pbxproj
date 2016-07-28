@@ -14,6 +14,7 @@
 		5B262F9F1D47E19E00284087 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B262F9D1D47E19E00284087 /* LaunchScreen.storyboard */; };
 		5B262FA71D47E7BA00284087 /* College.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B262FA61D47E7BA00284087 /* College.swift */; };
 		5B50673B1D48189700FD57BD /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B50673A1D48189700FD57BD /* DetailViewController.swift */; };
+		5BEF0DBE1D498A5F001F8C7C /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BEF0DBD1D498A5F001F8C7C /* MapViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		5B262FA01D47E19E00284087 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5B262FA61D47E7BA00284087 /* College.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = College.swift; sourceTree = "<group>"; };
 		5B50673A1D48189700FD57BD /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		5BEF0DBD1D498A5F001F8C7C /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 				5B262F941D47E19E00284087 /* AppDelegate.swift */,
 				5B262F961D47E19E00284087 /* ViewController.swift */,
 				5B50673A1D48189700FD57BD /* DetailViewController.swift */,
+				5BEF0DBD1D498A5F001F8C7C /* MapViewController.swift */,
 				5B262FA61D47E7BA00284087 /* College.swift */,
 				5B262F981D47E19E00284087 /* Main.storyboard */,
 				5B262F9B1D47E19E00284087 /* Assets.xcassets */,
@@ -144,6 +147,7 @@
 				5B262F971D47E19E00284087 /* ViewController.swift in Sources */,
 				5B262F951D47E19E00284087 /* AppDelegate.swift in Sources */,
 				5B262FA71D47E7BA00284087 /* College.swift in Sources */,
+				5BEF0DBE1D498A5F001F8C7C /* MapViewController.swift in Sources */,
 				5B50673B1D48189700FD57BD /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
