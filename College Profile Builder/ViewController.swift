@@ -18,9 +18,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        colleges.append(College(name: "Harvard", location: "Cambridge, MA", enrollment: 21000, image: UIImage(named: "Harvard")!, url: NSURL(string: "http://www.harvard.edu/")!, locationCoord: CLLocationCoordinate2DMake(42.3770, 71.1167)))
-        colleges.append(College(name: "Northwestern", location: "Evanston, IL", enrollment: 20336, image: UIImage(named: "Northwestern")!, url: NSURL(string: "http://www.northwestern.edu/")!, locationCoord: CLLocationCoordinate2DMake(42.0531, 87.6748)))
-        colleges.append(College(name: "Tsinghua", location: "Beijing, China", enrollment: 45237, image: UIImage(named: "Tsinghua")!, url: NSURL(string: "http://www.tsinghua.edu.cn/publish/newthuen/")!, locationCoord: CLLocationCoordinate2DMake(40.001, 116.3292)))
+        colleges.append(College(name: "Harvard", location: "Cambridge, MA", enrollment: 21000, image: UIImage(named: "Harvard")!, url: NSURL(string: "http://www.harvard.edu/")!, locationCoord: CLLocationCoordinate2DMake(42.3770, -71.1167)))
+        colleges.append(College(name: "Northwestern", location: "Evanston, IL", enrollment: 20336, image: UIImage(named: "Northwestern")!, url: NSURL(string: "http://www.northwestern.edu/")!, locationCoord: CLLocationCoordinate2DMake(42.0531, -87.6748)))
+        colleges.append(College(name: "Tsinghua", location: "Beijing, China", enrollment: 45237, image: UIImage(named: "Tsinghua")!, url: NSURL(string: "http://www.tsinghua.edu.cn/publish/newthuen/")!, locationCoord: CLLocationCoordinate2DMake(40.001, 116.32267)))
         editButton.tag = 0
     }
     override func viewWillAppear(animated: Bool) {

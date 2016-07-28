@@ -75,8 +75,8 @@ class DetailViewController: UIViewController, UIImagePickerControllerDelegate, U
         college.image = imageView.image
     }
     
-//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-//        let dvc = segue.destinationViewController as! MapViewController
-//        dvc.locationTextField.text = college.name
-//    }
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let dvc = segue.destinationViewController as! MapViewController
+        dvc.college = college
+    }
 }
