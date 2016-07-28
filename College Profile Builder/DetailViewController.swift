@@ -38,7 +38,7 @@ class DetailViewController: UIViewController, UIImagePickerControllerDelegate, U
     }
     
     @IBAction func onTappedImageView(sender: UITapGestureRecognizer) {
-        let actionController = UIAlertController(title: "Select image source", message: "test", preferredStyle: .ActionSheet)
+        let actionController = UIAlertController(title: "Select image source", message: nil, preferredStyle: .ActionSheet)
         
         let libraryAction = UIAlertAction(title: "Library", style: .Default) { (action) in
             self.imagePicker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
@@ -49,8 +49,10 @@ class DetailViewController: UIViewController, UIImagePickerControllerDelegate, U
                 self.imagePicker.sourceType = UIImagePickerControllerSourceType.Camera
                 self.presentViewController(self.imagePicker, animated: true, completion: nil)
             } else {
-                print("Camera not available")
-                //eventually dismiss AlertController and display alert
+                let alert = UIAlertController(title: "Camera not available", message: nil, preferredStyle: .Alert)
+                let okAction = UIAlertAction(title: "Ok", style: .Default, handler: nil)
+                alert.addAction(okAction)
+                self.presentViewController(alert, animated: true, completion: nil)
             }
         }
         let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
@@ -58,6 +60,7 @@ class DetailViewController: UIViewController, UIImagePickerControllerDelegate, U
         actionController.addAction(libraryAction)
         actionController.addAction(cameraAction)
         actionController.addAction(cancelAction)
+        presentViewController(actionController, animated: true, completion: nil)
     }
     @IBAction func onTappedGoButton(sender: UIButton) {
         let url = NSURL(string: urlTextField.text!)!

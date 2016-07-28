@@ -127,7 +127,13 @@
                                     <action selector="onTappedGoButton:" destination="Bah-ff-a0U" eventType="touchUpInside" id="2tS-8t-FVV"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vNe-wM-1k8">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Tap image to change" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5mL-oH-IpJ">
+                                <rect key="frame" x="237" y="220" width="126" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vNe-wM-1k8">
                                 <rect key="frame" x="175" y="244" width="250" height="150"/>
                                 <gestureRecognizers/>
                                 <constraints>
@@ -135,18 +141,14 @@
                                     <constraint firstAttribute="width" constant="250" id="fgw-dt-myi"/>
                                 </constraints>
                                 <connections>
-                                    <outletCollection property="gestureRecognizers" destination="6kV-Bd-WPr" appends="YES" id="uhx-xD-4IJ"/>
+                                    <outletCollection property="gestureRecognizers" destination="YUu-iZ-EJw" appends="YES" id="LKL-yJ-omw"/>
                                 </connections>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Tap image to change" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5mL-oH-IpJ">
-                                <rect key="frame" x="237" y="220" width="126" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <constraints>
+                            <constraint firstItem="vNe-wM-1k8" firstAttribute="centerX" secondItem="kfi-Nw-iNZ" secondAttribute="centerX" id="4Hb-Vb-jeQ"/>
                             <constraint firstItem="YwJ-Oz-bWB" firstAttribute="centerX" secondItem="kfi-Nw-iNZ" secondAttribute="centerX" id="50J-7p-0YI"/>
                             <constraint firstItem="6yl-18-Dyj" firstAttribute="centerX" secondItem="kfi-Nw-iNZ" secondAttribute="centerX" constant="98" id="SuW-2f-edl"/>
                             <constraint firstItem="5mL-oH-IpJ" firstAttribute="centerX" secondItem="kfi-Nw-iNZ" secondAttribute="centerX" id="fmc-p5-xdD"/>
@@ -165,13 +167,13 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TTR-1I-XtA" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="6kV-Bd-WPr">
+                <tapGestureRecognizer id="YUu-iZ-EJw">
                     <connections>
-                        <action selector="onTappedImageView:" destination="Bah-ff-a0U" id="Kh7-cm-ZY4"/>
+                        <action selector="onTappedImageView:" destination="Bah-ff-a0U" id="vBl-4K-RWp"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1684" y="-379"/>
+            <point key="canvasLocation" x="1815" y="-390"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="AFR-7r-9Jy">
