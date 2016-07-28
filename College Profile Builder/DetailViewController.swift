@@ -72,5 +72,6 @@ class DetailViewController: UIViewController, UIImagePickerControllerDelegate, U
         college.location = locationTextField.text!
         college.enrollment = Int(enrollmentTextField.text!)!
         college.url = NSURL(string: urlTextField.text!)
+        college.image = imageView.image
     }
 }
